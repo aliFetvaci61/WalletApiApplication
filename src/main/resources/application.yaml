@@ -1,0 +1,57 @@
+server:
+  port: 8484
+
+spring:
+
+  application:
+    name: wallet-api
+
+  # =========================
+  # POSTGRESQL CONFIG
+  # =========================
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: user
+    password: password
+    driver-class-name: org.postgresql.Driver
+
+  # =========================
+  # JPA / HIBERNATE
+  # =========================
+  jpa:
+    hibernate:
+      ddl-auto: update   # tabloyu otomatik oluşturur (dev ortam için)
+    show-sql: true       # SQL loglarını gösterir
+    properties:
+      hibernate:
+        format_sql: true  # SQL daha okunabilir loglanır
+
+  # =========================
+  # REDIS CONFIG
+  # =========================
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 60000
+
+  # =========================
+  # CACHE (manual RedisService kullandığımız için opsiyonel)
+  # =========================
+  cache:
+    type: none
+
+# =========================
+# EXTERNAL SERVICES (FEIGN)
+# =========================
+external:
+  campaign:
+    url: https://jsonplaceholder.typicode.com
+
+# =========================
+# LOGGING
+# =========================
+logging:
+  level:
+    org.springframework: INFO
+    com.example.walletapi: DEBUG
