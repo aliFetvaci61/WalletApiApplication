@@ -1,4 +1,4 @@
-package com.alifetvaci.walletapiapplication.walletapi.dto;
+package com.alifetvaci.walletapiapplication.dto;
 
 import lombok.Data;
 

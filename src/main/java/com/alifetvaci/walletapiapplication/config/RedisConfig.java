@@ -1,4 +1,4 @@
-package com.alifetvaci.walletapiapplication.walletapi.config;
+package com.alifetvaci.walletapiapplication.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

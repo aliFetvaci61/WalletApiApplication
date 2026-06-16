@@ -1,4 +1,4 @@
-package com.alifetvaci.walletapiapplication.walletapi.service;
+package com.alifetvaci.walletapiapplication.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;

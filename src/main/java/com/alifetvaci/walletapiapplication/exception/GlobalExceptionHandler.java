@@ -1,6 +1,5 @@
-package com.alifetvaci.walletapiapplication.walletapi.exception;
+package com.alifetvaci.walletapiapplication.exception;
 
-import com.alifetvaci.walletapiapplication.walletapi.exception.ErrorResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

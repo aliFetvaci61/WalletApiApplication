@@ -1,4 +1,4 @@
-package com.alifetvaci.walletapiapplication.walletapi.delegate;
+package com.alifetvaci.walletapiapplication.delegate;
 
 import lombok.Data;
 

@@ -1,8 +1,10 @@
-package com.alifetvaci.walletapiapplication.walletapi.controller;
+package com.alifetvaci.walletapiapplication.controller;
 
-import com.alifetvaci.walletapiapplication.walletapi.delegate.CampaignResponse;
-import com.alifetvaci.walletapiapplication.walletapi.dto.*;
-import com.alifetvaci.walletapiapplication.walletapi.service.WalletCardService;
+import com.alifetvaci.walletapiapplication.delegate.CampaignResponse;
+import com.alifetvaci.walletapiapplication.dto.CreateWalletCardRequest;
+import com.alifetvaci.walletapiapplication.dto.WalletCardResponse;
+import com.alifetvaci.walletapiapplication.dto.*;
+import com.alifetvaci.walletapiapplication.service.WalletCardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 

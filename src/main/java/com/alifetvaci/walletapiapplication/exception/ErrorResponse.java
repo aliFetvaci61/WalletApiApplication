@@ -1,4 +1,4 @@
-package com.alifetvaci.walletapiapplication.walletapi.exception;
+package com.alifetvaci.walletapiapplication.exception;
 
 import lombok.Builder;
 import lombok.Getter;

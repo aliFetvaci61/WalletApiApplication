@@ -1,4 +1,4 @@
-package com.alifetvaci.walletapiapplication.walletapi.entity;
+package com.alifetvaci.walletapiapplication.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

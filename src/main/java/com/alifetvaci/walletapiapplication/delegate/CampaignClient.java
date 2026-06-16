@@ -1,6 +1,5 @@
-package com.alifetvaci.walletapiapplication.walletapi.delegate;
+package com.alifetvaci.walletapiapplication.delegate;
 
-import com.alifetvaci.walletapiapplication.walletapi.delegate.CampaignResponse;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 

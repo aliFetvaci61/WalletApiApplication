@@ -1,6 +1,6 @@
-package com.alifetvaci.walletapiapplication.walletapi.repository;
+package com.alifetvaci.walletapiapplication.repository;
 
-import com.alifetvaci.walletapiapplication.walletapi.entity.WalletCard;
+import com.alifetvaci.walletapiapplication.entity.WalletCard;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

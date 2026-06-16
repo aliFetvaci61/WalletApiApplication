@@ -1,4 +1,4 @@
-package com.alifetvaci.walletapiapplication.walletapi.exception;
+package com.alifetvaci.walletapiapplication.exception;
 
 /**
  * İstenen kaynak (resource) sistemde bulunamadığında fırlatılır.
