@@ -80,6 +80,31 @@ public class WalletCardController {
         return service.getById(id);
     }
 
+    @GetMapping("/{cardNumber}/balance")
+    /**
+     * PathVariable kullanımı
+     *
+     * URL'den gelen id değerini alır:
+     * /wallet-cards/{card-number}/balance
+     */
+    public WalletCardResponse getByCardNumber(
+            @PathVariable String cardNumber ) {
+        return service.getByCardNumber(cardNumber);
+    }
+
+    @PostMapping("/{cardNumber}/balance/{balance}")
+    /**
+     * PathVariable kullanımı
+     *
+     * URL'den gelen id değerini alır:
+     * /wallet-cards/{card-number}/balance/{balance}
+     */
+    public WalletCardResponse updateBalanceByCardNumber(
+            @PathVariable String cardNumber,
+            @PathVariable Double balance) {
+        return service.updateByCardNumber(cardNumber, balance);
+    }
+
     @GetMapping("/{id}/campaign")
     public CampaignResponse getCampaign(
             @PathVariable Long id) {

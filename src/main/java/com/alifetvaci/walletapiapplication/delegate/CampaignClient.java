@@ -20,13 +20,13 @@ import org.springframework.web.bind.annotation.*;
 )
 public interface CampaignClient {
 
-    @GetMapping("/todos/{id}")
+    @GetMapping("/products/{id}")
     /**
      * Bu metod aslında bir HTTP GET request'tir.
      *
      * Feign bunu şu şekilde çalıştırır:
      *
-     * GET https://jsonplaceholder.typicode.com/todos/{id}
+     * GET https://dummyjson.com/products/{id}
      */
     CampaignResponse getCampaign(
             @PathVariable("id") Long id);

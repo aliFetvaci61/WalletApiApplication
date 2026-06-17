@@ -100,6 +100,84 @@ public class WalletCardService {
         return map(card);
     }
 
+    public WalletCardResponse getByCardNumber(String cardNumber) {
+
+        String cacheKey = "wallet-card:" + cardNumber;
+        // Redis için unique key oluşturuyoruz
+
+        WalletCardCacheDto cached =
+                (WalletCardCacheDto) redisService.get(cacheKey);
+        // Önce Redis kontrol edilir (cache hit)
+
+        if (cached != null) {
+
+            System.out.println("Redis'ten döndü");
+
+            // Redis'ten geldiyse DB'ye gitmeden response dönülür
+            return WalletCardResponse.builder()
+                    .id(cached.getId())
+                    .ownerName(cached.getOwnerName())
+                    .cardNumber(cached.getCardNumber())
+                    .balance(cached.getBalance())
+                    .build();
+        }
+
+        // Cache miss → DB'ye git
+        WalletCard card = repository.findByCardNumber(cardNumber)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Kart bulunamadı: " + cardNumber
+                        ));
+
+        // DB'den gelen veri Redis'e yazılır (cache populate)
+        redisService.save(
+                cacheKey,
+                WalletCardCacheDto.builder()
+                        .id(card.getId())
+                        .ownerName(card.getOwnerName())
+                        .cardNumber(card.getCardNumber())
+                        .balance(card.getBalance())
+                        .build(),
+                Duration.ofMinutes(10)
+        );
+
+        return map(card);
+    }
+
+    public WalletCardResponse updateByCardNumber(String cardNumber, Double balance) {
+
+        String cacheKey = "wallet-card:" + cardNumber;
+        // Redis için unique key oluşturuyoruz
+
+
+        // Cache miss → DB'ye git
+        WalletCard card = repository.findByCardNumber(cardNumber)
+                .orElseThrow(() ->
+                        new ResourceNotFoundException(
+                                "Kart bulunamadı: " + cardNumber
+                        ));
+
+        // balance ı set et
+        card.setBalance(balance);
+
+        // DB ye kaydet
+        repository.save(card);
+
+        // DB'ye kaydedilen veri Redis'e yazılır (cache populate)
+        redisService.save(
+                cacheKey,
+                WalletCardCacheDto.builder()
+                        .id(card.getId())
+                        .ownerName(card.getOwnerName())
+                        .cardNumber(card.getCardNumber())
+                        .balance(card.getBalance())
+                        .build(),
+                Duration.ofMinutes(10)
+        );
+
+        return map(card);
+    }
+
     public CampaignResponse getCampaign(Long id) {
 
         // Feign Client ile dış servise HTTP request atılır

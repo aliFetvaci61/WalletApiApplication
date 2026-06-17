@@ -8,11 +8,23 @@ import lombok.Data;
 @Data
 public class CampaignResponse {
 
-    private Long userId;
-
     private Long id;
 
     private String title;
 
-    private Boolean completed;
+    private String description;
+
+    private String category;
+
+    private Double price;
+
+    private Double rating;
+
+    private Integer stock;
+
+    private String brand;
+
+    private String availabilityStatus;
+
+    private String thumbnail;
 }

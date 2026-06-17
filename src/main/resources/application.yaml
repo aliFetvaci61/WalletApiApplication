@@ -1,5 +1,5 @@
 server:
-  port: 8484
+  port: 8080
 
 spring:
 
@@ -46,7 +46,7 @@ spring:
 # =========================
 external:
   campaign:
-    url: https://jsonplaceholder.typicode.com
+    url: https://dummyjson.com
 
 # =========================
 # LOGGING
