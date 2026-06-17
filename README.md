@@ -1,6 +1,6 @@
 # 💳 Wallet API (Spring Boot + PostgreSQL + Redis + Feign)
 
-Bu proje, mobil uygulamala geliştiriciler için geliştirilmiş basit bir Wallet (Dijital Cüzdan) backend API örneğidir.
+Bu proje, mobil uygulama geliştiricileri için geliştirilmiş basit bir Wallet (Dijital Cüzdan) backend API örneğidir.
 
 ---
 
