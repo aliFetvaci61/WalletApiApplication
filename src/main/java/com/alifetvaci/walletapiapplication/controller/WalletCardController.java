@@ -44,6 +44,16 @@ import java.util.List;
  */
 public class WalletCardController {
 
+
+    /**
+     * İş mantığını içeren Service katmanının referansıdır.
+     *
+     * Controller, gelen HTTP isteklerini doğrudan işlemez.
+     * Gerekli operasyonları gerçekleştirmesi için Service katmanını çağırır.
+     *
+     * 'final' olarak tanımlandığı için nesne oluşturulduktan sonra değiştirilemez.
+     * @RequiredArgsConstructor sayesinde constructor üzerinden Dependency Injection yapılır.
+     */
     private final WalletCardService service;
 
     @PostMapping
